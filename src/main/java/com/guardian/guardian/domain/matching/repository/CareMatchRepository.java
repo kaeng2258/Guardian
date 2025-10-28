@@ -1,0 +1,15 @@
+package com.strongguardianman.guardian.domain.matching.repository;
+
+import com.strongguardianman.guardian.domain.matching.CareMatch;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CareMatchRepository extends JpaRepository<CareMatch, Long> {
+
+    List<CareMatch> findByClientId(Long clientId);
+
+    List<CareMatch> findByProviderId(Long providerId);
+
+    Optional<CareMatch> findFirstByClientIdAndCurrentTrue(Long clientId);
+}
