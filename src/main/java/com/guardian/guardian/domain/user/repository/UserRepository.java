@@ -1,6 +1,6 @@
 package com.guardian.guardian.domain.user.repository;
 
-import com.guardian.guardian.domain.user.User;
+import com.guardian.guardian.domain.user.entity.User;
 import com.guardian.guardian.domain.user.UserRole;
 import java.util.List;
 import java.util.Optional;

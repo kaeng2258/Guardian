@@ -1,7 +1,8 @@
-package com.guardian.guardian.domain.alarm;
+package com.guardian.guardian.domain.alarm.entity;
 
-import com.guardian.guardian.domain.medicine.Medicine;
-import com.guardian.guardian.domain.user.User;
+import com.guardian.guardian.global.common.BaseTimeEntity;
+import com.guardian.guardian.domain.medicine.entity.Medicine;
+import com.guardian.guardian.domain.user.entity.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -11,7 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,12 +24,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Entity
-@Table(name = "medication_log")
-public class MedicationLog {
+@Table(name = "alarm")
+public class MedicationAlarm extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "log_id")
+    @Column(name = "alarm_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -39,9 +40,18 @@ public class MedicationLog {
     @JoinColumn(name = "medicine_id", nullable = false)
     private Medicine medicine;
 
-    @Column(name = "log_timestamp", nullable = false)
-    private LocalDateTime logTimestamp;
+    @Column(name = "dosage_amount", nullable = false)
+    private Integer dosageAmount;
 
-    @Column(name = "notes", columnDefinition = "TEXT")
-    private String notes;
+    @Column(name = "dosage_unit", nullable = false, length = 50)
+    private String dosageUnit;
+
+    @Column(name = "alarm_time", nullable = false)
+    private LocalTime alarmTime;
+
+    @Column(name = "days_of_week", nullable = false, length = 50)
+    private String daysOfWeek;
+
+    @Column(name = "is_active", nullable = false)
+    private boolean active;
 }

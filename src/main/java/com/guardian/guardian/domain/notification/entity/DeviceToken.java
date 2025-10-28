@@ -1,6 +1,6 @@
-package com.guardian.guardian.domain.notification;
+package com.guardian.guardian.domain.notification.entity;
 
-import com.guardian.guardian.domain.user.User;
+import com.guardian.guardian.domain.user.entity.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

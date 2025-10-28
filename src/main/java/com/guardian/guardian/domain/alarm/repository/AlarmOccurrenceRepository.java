@@ -1,6 +1,6 @@
 package com.guardian.guardian.domain.alarm.repository;
 
-import com.guardian.guardian.domain.alarm.AlarmOccurrence;
+import com.guardian.guardian.domain.alarm.entity.AlarmOccurrence;
 import com.guardian.guardian.domain.alarm.AlarmOccurrenceStatus;
 import java.time.LocalDateTime;
 import java.util.List;

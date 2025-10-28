@@ -1,6 +1,6 @@
 package com.guardian.guardian.domain.chat.repository;
 
-import com.guardian.guardian.domain.chat.ChatMessage;
+import com.guardian.guardian.domain.chat.entity.ChatMessage;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 

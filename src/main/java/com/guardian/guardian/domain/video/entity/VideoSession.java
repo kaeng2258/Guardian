@@ -1,6 +1,8 @@
-package com.guardian.guardian.domain.video;
+package com.guardian.guardian.domain.video.entity;
 
-import com.guardian.guardian.domain.user.User;
+import com.guardian.guardian.domain.video.CallType;
+import com.guardian.guardian.domain.video.VideoSessionStatus;
+import com.guardian.guardian.domain.user.entity.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

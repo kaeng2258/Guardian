@@ -1,6 +1,6 @@
 package com.guardian.guardian.domain.emergency.repository;
 
-import com.guardian.guardian.domain.emergency.EmergencyAlert;
+import com.guardian.guardian.domain.emergency.entity.EmergencyAlert;
 import com.guardian.guardian.domain.emergency.EmergencyAlertStatus;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,7 +1,9 @@
-package com.guardian.guardian.domain.notification;
+package com.guardian.guardian.domain.notification.entity;
 
-import com.guardian.guardian.domain.common.BaseTimeEntity;
-import com.guardian.guardian.domain.user.User;
+import com.guardian.guardian.domain.notification.NotificationStatus;
+import com.guardian.guardian.domain.notification.NotificationType;
+import com.guardian.guardian.global.common.BaseTimeEntity;
+import com.guardian.guardian.domain.user.entity.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

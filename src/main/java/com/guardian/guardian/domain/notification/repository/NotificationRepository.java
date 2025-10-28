@@ -1,6 +1,6 @@
 package com.guardian.guardian.domain.notification.repository;
 
-import com.guardian.guardian.domain.notification.Notification;
+import com.guardian.guardian.domain.notification.entity.Notification;
 import com.guardian.guardian.domain.notification.NotificationStatus;
 import com.guardian.guardian.domain.notification.NotificationType;
 import java.util.List;

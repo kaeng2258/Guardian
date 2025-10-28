@@ -1,6 +1,6 @@
 package com.guardian.guardian.domain.alarm.repository;
 
-import com.guardian.guardian.domain.alarm.MedicationLog;
+import com.guardian.guardian.domain.alarm.entity.MedicationLog;
 import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

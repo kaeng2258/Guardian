@@ -1,4 +1,4 @@
-package com.guardian.guardian.domain.medicine;
+package com.guardian.guardian.domain.medicine.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

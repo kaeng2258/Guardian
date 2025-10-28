@@ -1,6 +1,7 @@
-package com.guardian.guardian.domain.matching;
+package com.guardian.guardian.domain.alarm.entity;
 
-import com.guardian.guardian.domain.user.User;
+import com.guardian.guardian.domain.medicine.entity.Medicine;
+import com.guardian.guardian.domain.user.entity.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -10,7 +11,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -23,12 +23,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Entity
-@Table(name = "\"match\"")
-public class CareMatch {
+@Table(name = "medication_log")
+public class MedicationLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "match_id")
+    @Column(name = "log_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -36,18 +36,12 @@ public class CareMatch {
     private User client;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "provider_user_id", nullable = false)
-    private User provider;
+    @JoinColumn(name = "medicine_id", nullable = false)
+    private Medicine medicine;
 
-    @Column(name = "start_date", nullable = false)
-    private LocalDate startDate;
+    @Column(name = "log_timestamp", nullable = false)
+    private LocalDateTime logTimestamp;
 
-    @Column(name = "end_date")
-    private LocalDate endDate;
-
-    @Column(name = "is_current", nullable = false)
-    private boolean current;
-
-    @Column(name = "match_date", nullable = false)
-    private LocalDateTime matchDate;
+    @Column(name = "notes", columnDefinition = "TEXT")
+    private String notes;
 }

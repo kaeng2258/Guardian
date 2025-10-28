@@ -1,10 +1,8 @@
-package com.guardian.guardian.domain.emergency;
+package com.guardian.guardian.domain.matching.entity;
 
-import com.guardian.guardian.domain.user.User;
+import com.guardian.guardian.domain.user.entity.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -24,33 +23,31 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Entity
-@Table(name = "emergency_alert")
-public class EmergencyAlert {
+@Table(name = "\"match\"")
+public class CareMatch {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "alert_id")
+    @Column(name = "match_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_user_id", nullable = false)
     private User client;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "alert_type", nullable = false, length = 30)
-    private EmergencyAlertType alertType;
-
-    @Column(name = "alert_time", nullable = false)
-    private LocalDateTime alertTime;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false, length = 40)
-    private EmergencyAlertStatus status;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "resolved_by_user_id")
-    private User resolvedBy;
+    @JoinColumn(name = "provider_user_id", nullable = false)
+    private User provider;
 
-    @Column(name = "resolved_at")
-    private LocalDateTime resolvedAt;
+    @Column(name = "start_date", nullable = false)
+    private LocalDate startDate;
+
+    @Column(name = "end_date")
+    private LocalDate endDate;
+
+    @Column(name = "is_current", nullable = false)
+    private boolean current;
+
+    @Column(name = "match_date", nullable = false)
+    private LocalDateTime matchDate;
 }

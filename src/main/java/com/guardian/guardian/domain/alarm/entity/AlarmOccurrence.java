@@ -1,5 +1,6 @@
-package com.guardian.guardian.domain.alarm;
+package com.guardian.guardian.domain.alarm.entity;
 
+import com.guardian.guardian.domain.alarm.AlarmOccurrenceStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

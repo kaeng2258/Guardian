@@ -1,6 +1,7 @@
-package com.guardian.guardian.domain.chat;
+package com.guardian.guardian.domain.chat.entity;
 
-import com.guardian.guardian.domain.user.User;
+import com.guardian.guardian.domain.chat.MessageType;
+import com.guardian.guardian.domain.user.entity.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

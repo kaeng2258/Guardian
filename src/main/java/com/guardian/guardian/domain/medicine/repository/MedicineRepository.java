@@ -1,6 +1,6 @@
 package com.guardian.guardian.domain.medicine.repository;
 
-import com.guardian.guardian.domain.medicine.Medicine;
+import com.guardian.guardian.domain.medicine.entity.Medicine;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
