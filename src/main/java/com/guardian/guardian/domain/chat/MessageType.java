@@ -1,4 +1,4 @@
-package com.strongguardianman.guardian.domain.chat;
+package com.guardian.guardian.domain.chat;
 
 public enum MessageType {
     TEXT,

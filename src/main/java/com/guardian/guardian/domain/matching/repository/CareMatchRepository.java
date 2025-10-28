@@ -1,6 +1,6 @@
-package com.strongguardianman.guardian.domain.matching.repository;
+package com.guardian.guardian.domain.matching.repository;
 
-import com.strongguardianman.guardian.domain.matching.CareMatch;
+import com.guardian.guardian.domain.matching.CareMatch;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;

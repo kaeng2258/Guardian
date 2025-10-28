@@ -1,6 +1,6 @@
-package com.strongguardianman.guardian.domain.alarm.repository;
+package com.guardian.guardian.domain.alarm.repository;
 
-import com.strongguardianman.guardian.domain.alarm.MedicationAlarm;
+import com.guardian.guardian.domain.alarm.MedicationAlarm;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;

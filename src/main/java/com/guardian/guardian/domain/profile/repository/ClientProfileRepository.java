@@ -1,6 +1,6 @@
-package com.strongguardianman.guardian.domain.profile.repository;
+package com.guardian.guardian.domain.profile.repository;
 
-import com.strongguardianman.guardian.domain.profile.ClientProfile;
+import com.guardian.guardian.domain.profile.ClientProfile;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 

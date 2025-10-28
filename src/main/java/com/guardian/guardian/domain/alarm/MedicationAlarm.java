@@ -1,8 +1,8 @@
-package com.strongguardianman.guardian.domain.alarm;
+package com.guardian.guardian.domain.alarm;
 
-import com.strongguardianman.guardian.domain.common.BaseTimeEntity;
-import com.strongguardianman.guardian.domain.medicine.Medicine;
-import com.strongguardianman.guardian.domain.user.User;
+import com.guardian.guardian.domain.common.BaseTimeEntity;
+import com.guardian.guardian.domain.medicine.Medicine;
+import com.guardian.guardian.domain.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

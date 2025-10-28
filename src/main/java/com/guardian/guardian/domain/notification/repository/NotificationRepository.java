@@ -1,8 +1,8 @@
-package com.strongguardianman.guardian.domain.notification.repository;
+package com.guardian.guardian.domain.notification.repository;
 
-import com.strongguardianman.guardian.domain.notification.Notification;
-import com.strongguardianman.guardian.domain.notification.NotificationStatus;
-import com.strongguardianman.guardian.domain.notification.NotificationType;
+import com.guardian.guardian.domain.notification.Notification;
+import com.guardian.guardian.domain.notification.NotificationStatus;
+import com.guardian.guardian.domain.notification.NotificationType;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 

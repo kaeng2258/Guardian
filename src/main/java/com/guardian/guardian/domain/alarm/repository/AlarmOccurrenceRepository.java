@@ -1,7 +1,7 @@
-package com.strongguardianman.guardian.domain.alarm.repository;
+package com.guardian.guardian.domain.alarm.repository;
 
-import com.strongguardianman.guardian.domain.alarm.AlarmOccurrence;
-import com.strongguardianman.guardian.domain.alarm.AlarmOccurrenceStatus;
+import com.guardian.guardian.domain.alarm.AlarmOccurrence;
+import com.guardian.guardian.domain.alarm.AlarmOccurrenceStatus;
 import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

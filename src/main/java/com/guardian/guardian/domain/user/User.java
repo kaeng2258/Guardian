@@ -1,7 +1,7 @@
-package com.strongguardianman.guardian.domain.user;
+package com.guardian.guardian.domain.user;
 
-import com.strongguardianman.guardian.domain.common.BaseTimeEntity;
-import com.strongguardianman.guardian.domain.profile.ClientProfile;
+import com.guardian.guardian.domain.common.BaseTimeEntity;
+import com.guardian.guardian.domain.profile.ClientProfile;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

@@ -1,6 +1,6 @@
-package com.strongguardianman.guardian.domain.matching;
+package com.guardian.guardian.domain.matching;
 
-import com.strongguardianman.guardian.domain.user.User;
+import com.guardian.guardian.domain.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

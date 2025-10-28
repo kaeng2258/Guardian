@@ -1,4 +1,4 @@
-package com.strongguardianman.guardian.domain.notification;
+package com.guardian.guardian.domain.notification;
 
 public enum NotificationStatus {
     SENT,

@@ -1,4 +1,4 @@
-package com.strongguardianman.guardian.domain.alarm;
+package com.guardian.guardian.domain.alarm;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

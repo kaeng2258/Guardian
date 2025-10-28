@@ -1,4 +1,4 @@
-package com.strongguardianman.guardian.domain.common;
+package com.guardian.guardian.domain.common;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;

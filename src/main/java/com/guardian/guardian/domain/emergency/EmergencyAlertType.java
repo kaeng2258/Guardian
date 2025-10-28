@@ -1,4 +1,4 @@
-package com.strongguardianman.guardian.domain.emergency;
+package com.guardian.guardian.domain.emergency;
 
 public enum EmergencyAlertType {
     CLIENT_EMERGENCY,

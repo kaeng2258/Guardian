@@ -1,7 +1,7 @@
-package com.strongguardianman.guardian.domain.video.repository;
+package com.guardian.guardian.domain.video.repository;
 
-import com.strongguardianman.guardian.domain.video.VideoSession;
-import com.strongguardianman.guardian.domain.video.VideoSessionStatus;
+import com.guardian.guardian.domain.video.VideoSession;
+import com.guardian.guardian.domain.video.VideoSessionStatus;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 

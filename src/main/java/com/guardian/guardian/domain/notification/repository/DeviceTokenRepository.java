@@ -1,6 +1,6 @@
-package com.strongguardianman.guardian.domain.notification.repository;
+package com.guardian.guardian.domain.notification.repository;
 
-import com.strongguardianman.guardian.domain.notification.DeviceToken;
+import com.guardian.guardian.domain.notification.DeviceToken;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;

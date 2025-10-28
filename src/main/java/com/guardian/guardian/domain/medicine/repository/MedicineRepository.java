@@ -1,6 +1,6 @@
-package com.strongguardianman.guardian.domain.medicine.repository;
+package com.guardian.guardian.domain.medicine.repository;
 
-import com.strongguardianman.guardian.domain.medicine.Medicine;
+import com.guardian.guardian.domain.medicine.Medicine;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;

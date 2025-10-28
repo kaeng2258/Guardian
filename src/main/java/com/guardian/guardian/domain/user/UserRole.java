@@ -1,4 +1,4 @@
-package com.strongguardianman.guardian.domain.user;
+package com.guardian.guardian.domain.user;
 
 public enum UserRole {
     CLIENT,
