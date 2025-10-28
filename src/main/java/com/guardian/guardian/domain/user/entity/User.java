@@ -1,5 +1,6 @@
 package com.guardian.guardian.domain.user.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.guardian.guardian.domain.user.UserRole;
 import com.guardian.guardian.domain.user.UserStatus;
 import com.guardian.guardian.global.common.BaseTimeEntity;
@@ -36,6 +37,7 @@ public class User extends BaseTimeEntity {
     @Column(name = "email", nullable = false, unique = true, length = 255)
     private String email;
 
+    @JsonIgnore
     @Column(name = "password", nullable = false, length = 255)
     private String password;
 
@@ -55,4 +57,18 @@ public class User extends BaseTimeEntity {
 
     @OneToOne(mappedBy = "client", fetch = FetchType.LAZY)
     private ClientProfile clientProfile;
+
+    public void changePassword(String encodedPassword) {
+        this.password = encodedPassword;
+    }
+
+    public void updateProfile(String name, String profileImageUrl, UserStatus status) {
+        this.name = name;
+        if (profileImageUrl != null) {
+            this.profileImageUrl = profileImageUrl;
+        }
+        if (status != null) {
+            this.status = status;
+        }
+    }
 }

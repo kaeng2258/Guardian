@@ -44,4 +44,9 @@ public class MedicationLog {
 
     @Column(name = "notes", columnDefinition = "TEXT")
     private String notes;
+
+    public void update(LocalDateTime logTimestamp, String notes) {
+        this.logTimestamp = logTimestamp;
+        this.notes = notes;
+    }
 }

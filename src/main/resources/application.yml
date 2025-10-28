@@ -1,3 +1,7 @@
 spring:
   application:
     name: guardian
+jwt:
+  secret: ${JWT_SECRET:change-me}
+  access-token-validity: 1800
+  refresh-token-validity: 1209600

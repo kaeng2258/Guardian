@@ -67,4 +67,19 @@ public class VideoSession {
 
     @Column(name = "quality_score")
     private Float qualityScore;
+
+    public void updateStatus(
+            VideoSessionStatus status, String answerSdp, Integer durationSeconds, Float qualityScore) {
+        this.status = status;
+        this.answerSdp = answerSdp;
+        if (VideoSessionStatus.ENDED.equals(status)) {
+            this.endedAt = LocalDateTime.now();
+        }
+        if (durationSeconds != null) {
+            this.durationSeconds = durationSeconds;
+        }
+        if (qualityScore != null) {
+            this.qualityScore = qualityScore;
+        }
+    }
 }
