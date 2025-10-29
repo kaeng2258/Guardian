@@ -1,6 +1,8 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { API_BASE_URL, apiRequest } from "../../lib/api";
 
 type SignupPayload = {
   role: "CLIENT" | "PROVIDER";
@@ -23,6 +25,7 @@ const ROLE_SUMMARY: Record<SignupPayload["role"], string> = {
 };
 
 export function SignupForm() {
+  const router = useRouter();
   const [form, setForm] = useState<SignupPayload>({
     role: "CLIENT",
     email: "",
@@ -72,21 +75,17 @@ export function SignupForm() {
     setState({ status: "loading" });
 
     try {
-      const response = await fetch("http://localhost:8090/api/users", {
+      await apiRequest("/api/users", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)
       });
-
-      if (!response.ok) {
-        const body = await response.json().catch(() => null);
-        throw new Error(body?.message ?? "회원가입에 실패했습니다.");
-      }
 
       setState({
         status: "success",
         onboarding: ROLE_SUMMARY[form.role]
       });
+
+      router.push("/login");
     } catch (error) {
       setState({
         status: "error",
@@ -186,15 +185,19 @@ export function SignupForm() {
         {state.status === "loading" ? "회원가입 중..." : "회원가입"}
       </button>
 
-      {state.status === "success" && (
-        <p className="muted">
-          회원가입 완료! {state.onboarding}
-        </p>
-      )}
-
       {state.status === "error" && (
         <p className="muted" style={{ color: "#dc2626" }}>
           {state.message}
+        </p>
+      )}
+
+      <p className="muted">
+        API 서버: <strong>{API_BASE_URL}</strong>
+      </p>
+
+      {state.status === "success" && (
+        <p className="muted">
+          회원가입 완료! {state.onboarding}
         </p>
       )}
     </form>

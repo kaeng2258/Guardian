@@ -25,6 +25,12 @@ cd frontapp
 npm install
 ```
 
+필요에 따라 API 서버 주소를 `.env.local` 에 지정할 수 있습니다.
+
+```
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8090
+```
+
 > 현재 환경에서 네트워크가 제한된 경우, 위 명령이 실패할 수 있습니다.  
 > 이때는 패키지 설치가 가능한 환경에서 `npm install`을 실행한 뒤 `node_modules`를 복사하거나,  
 > pnpm/bun처럼 로컬 미러 저장소를 활용해 주세요.
@@ -34,6 +40,8 @@ npm install
 ```bash
 npm run dev
 ```
+
+기본 포트는 3000이며, 로그인/회원가입 폼은 위 환경변수에 맞춰 백엔드 API를 호출합니다.
 
 ## 구성 메모
 

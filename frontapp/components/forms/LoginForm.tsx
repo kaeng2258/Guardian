@@ -1,6 +1,8 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { API_BASE_URL, apiRequest, clearToken, storeToken } from "../../lib/api";
 
 type LoginPayload = {
   email: string;
@@ -21,6 +23,7 @@ const ROLE_REDIRECTS: Record<string, string> = {
 };
 
 export function LoginForm() {
+  const router = useRouter();
   const [form, setForm] = useState<LoginPayload>({
     email: "",
     password: "",
@@ -53,32 +56,29 @@ export function LoginForm() {
     setResult({ status: "loading" });
 
     try {
-      const response = await fetch("http://localhost:8090/api/auth/login", {
+      const data = await apiRequest<{
+        role: string;
+        accessToken: string;
+        refreshToken: string;
+      }>("/api/auth/login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: form.email,
           password: form.password
         })
       });
 
-      if (!response.ok) {
-        const body = await response.json().catch(() => null);
-        throw new Error(body?.message ?? "로그인에 실패했습니다.");
-      }
-
-      const data = (await response.json()) as {
-        role: string;
-        accessToken: string;
-      };
-
       const redirect = ROLE_REDIRECTS[data.role] ?? "/client/dashboard";
 
-      if (form.remember && typeof window !== "undefined") {
-        localStorage.setItem("guardian.accessToken", data.accessToken);
+      storeToken("guardian.accessToken", data.accessToken);
+      if (form.remember) {
+        storeToken("guardian.refreshToken", data.refreshToken);
+      } else {
+        clearToken("guardian.refreshToken");
       }
 
       setResult({ status: "success", redirect });
+      router.push(redirect);
     } catch (error) {
       setResult({
         status: "error",
@@ -138,15 +138,19 @@ export function LoginForm() {
         {result.status === "loading" ? "로그인 중..." : "로그인"}
       </button>
 
-      {result.status === "success" && (
-        <p className="muted">
-          로그인 성공! <strong>{result.redirect}</strong> 로 이동하세요.
-        </p>
-      )}
-
       {result.status === "error" && (
         <p className="muted" style={{ color: "#dc2626" }}>
           {result.message}
+        </p>
+      )}
+
+      <p className="muted">
+        API 서버: <strong>{API_BASE_URL}</strong>
+      </p>
+
+      {result.status === "success" && (
+        <p className="muted">
+          로그인 성공! <strong>{result.redirect}</strong> 로 이동합니다.
         </p>
       )}
     </form>
