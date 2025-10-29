@@ -51,4 +51,13 @@ public class AlarmOccurrence {
 
     @Column(name = "provider_notes", columnDefinition = "TEXT")
     private String providerNotes;
+
+    public void updateStatus(
+            com.guardian.guardian.domain.alarm.AlarmOccurrenceStatus status,
+            LocalDateTime actualResponseTime,
+            String providerNotes) {
+        this.status = status;
+        this.actualResponseTime = actualResponseTime;
+        this.providerNotes = providerNotes;
+    }
 }

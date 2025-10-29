@@ -50,4 +50,14 @@ public class DeviceToken {
             lastUsedAt = now;
         }
     }
+
+    public void refreshUsage(String deviceOs) {
+        this.lastUsedAt = LocalDateTime.now();
+        this.deviceOs = deviceOs;
+        this.active = true;
+    }
+
+    public void deactivate() {
+        this.active = false;
+    }
 }

@@ -50,4 +50,9 @@ public class CareMatch {
 
     @Column(name = "match_date", nullable = false)
     private LocalDateTime matchDate;
+
+    public void deactivate(LocalDate endDate) {
+        this.current = false;
+        this.endDate = endDate;
+    }
 }

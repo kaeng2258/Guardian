@@ -45,4 +45,11 @@ public class ClientProfile extends BaseTimeEntity {
 
     @Column(name = "medication_cycle", nullable = false, length = 255)
     private String medicationCycle;
+
+    public void updateProfile(String address, Integer age, String medicalNotes, String medicationCycle) {
+        this.address = address;
+        this.age = age;
+        this.medicalNotes = medicalNotes;
+        this.medicationCycle = medicationCycle;
+    }
 }
