@@ -4,8 +4,11 @@ import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
+import lombok.Getter;
+
 import java.time.LocalDateTime;
 
+@Getter
 @MappedSuperclass
 public abstract class BaseTimeEntity {
 
@@ -27,11 +30,4 @@ public abstract class BaseTimeEntity {
         this.updatedAt = LocalDateTime.now();
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
 }
