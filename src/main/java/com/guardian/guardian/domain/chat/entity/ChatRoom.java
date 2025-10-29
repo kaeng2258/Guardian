@@ -65,4 +65,19 @@ public class ChatRoom {
             createdAt = LocalDateTime.now();
         }
     }
+
+    public void updateLastMessage(String snippet, LocalDateTime sentAt, Long senderId) {
+        this.lastMessageSnippet = snippet;
+        this.lastMessageAt = sentAt;
+        this.readByClient = client.getId().equals(senderId);
+        this.readByProvider = provider.getId().equals(senderId);
+    }
+
+    public void markAsReadByClient() {
+        this.readByClient = true;
+    }
+
+    public void markAsReadByProvider() {
+        this.readByProvider = true;
+    }
 }

@@ -55,4 +55,20 @@ public class EmergencyAlert {
 
     @Column(name = "resolved_at")
     private LocalDateTime resolvedAt;
+
+    @Column(name = "memo", columnDefinition = "TEXT")
+    private String memo;
+
+    @Column(name = "latitude")
+    private Double latitude;
+
+    @Column(name = "longitude")
+    private Double longitude;
+
+    public void markResolved(User resolvedBy, LocalDateTime resolvedAt, EmergencyAlertStatus status, String memo) {
+        this.resolvedBy = resolvedBy;
+        this.resolvedAt = resolvedAt;
+        this.status = status;
+        this.memo = memo;
+    }
 }

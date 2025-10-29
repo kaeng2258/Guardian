@@ -54,4 +54,13 @@ public class MedicationAlarm extends BaseTimeEntity {
 
     @Column(name = "is_active", nullable = false)
     private boolean active;
+
+    public void updatePlan(
+            Integer dosageAmount, String dosageUnit, LocalTime alarmTime, String daysOfWeek, boolean active) {
+        this.dosageAmount = dosageAmount;
+        this.dosageUnit = dosageUnit;
+        this.alarmTime = alarmTime;
+        this.daysOfWeek = daysOfWeek;
+        this.active = active;
+    }
 }

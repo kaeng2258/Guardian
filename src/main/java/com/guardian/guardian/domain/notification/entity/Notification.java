@@ -63,4 +63,13 @@ public class Notification extends BaseTimeEntity {
 
     @Column(name = "fail_reason", length = 255)
     private String failReason;
+
+    public void markAsRead() {
+        this.read = true;
+    }
+
+    public void markStatus(NotificationStatus status, String failReason) {
+        this.status = status;
+        this.failReason = failReason;
+    }
 }
