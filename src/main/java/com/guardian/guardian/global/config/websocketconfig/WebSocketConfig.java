@@ -1,4 +1,4 @@
-package com.guardian.guardian.global.websocketconfig;
+package com.guardian.guardian.global.config.websocketconfig;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

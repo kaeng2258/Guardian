@@ -1,3 +1,21 @@
+server:
+  port: 8081
+
 spring:
-  application:
-    name: guardian
+  datasource:
+    url: jdbc:mysql://localhost:3306/guardian?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # 개발용. 최초엔 create/update, 운영은 validate 권장
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+logging:
+  level:
+    org.hibernate.SQL: debug
